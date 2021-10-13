@@ -1,0 +1,5 @@
+[user]
+	email = tomsb07@gmail.com
+	name = Thomas BAGREL
+[core]
+	excludesfile = @gitignore@
