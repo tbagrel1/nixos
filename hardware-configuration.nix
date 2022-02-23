@@ -9,9 +9,14 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "i915" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  boot.kernelParams = [ "i915.enable_psr=0" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/879cb9f1-839a-4974-99c4-97701523d98b";
@@ -27,7 +32,17 @@
 
   swapDevices = [ ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  # high-resolution display
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  # # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
+  # # https://nixos.wiki/wiki/Accelerated_Video_Playback
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
 }
