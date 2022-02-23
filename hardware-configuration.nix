@@ -16,7 +16,7 @@
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  boot.kernelParams = [ "i915.enable_psr=0" ];
+  # boot.kernelParams = [ "i915.enable_psr=0" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/879cb9f1-839a-4974-99c4-97701523d98b";
