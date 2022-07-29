@@ -17,6 +17,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./symlinks/activation-script.nix
+      # ./jetbrains-toolbox.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -25,7 +26,7 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
     networkmanager.enable = true;
@@ -95,6 +96,7 @@
   services = {
     gnome.gnome-keyring.enable = true;
     xserver = {
+#      videoDrivers = [ "displaylink" "modesetting" ];
       enable = true;
       displayManager = {
         gdm.enable = true;
@@ -280,6 +282,7 @@
       enpass
       file
       findutils
+      firefox
       fish
       gcc
       gdb
@@ -314,6 +317,8 @@
       iperf
       jdk
       jdk11
+      jetbrains.idea-ultimate
+      jetbrains.webstorm
       konsole
       less
       libreoffice
@@ -329,6 +334,8 @@
       niv
       nix-direnv
       nixpkgs-fmt
+      nodejs
+      nodePackages.npm
       nodePackages.eslint
       nodePackages.prettier
       nodePackages.pyright
@@ -339,13 +346,17 @@
       openssh
       openssl
       openvpn
+      ott
       pandoc
       patch
       pavucontrol
       pdftk
       postgresql
+      postman
       pulseaudioFull
       racer
+      remarkable-mouse
+      rmfuse
       ripgrep
       rnix-lsp
       rust-analyzer
@@ -366,6 +377,7 @@
       xsel
       zip
       zoom-us
+      zotero
     ];
 
   # This value determines the NixOS release from which the default
