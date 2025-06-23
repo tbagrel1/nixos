@@ -1,4 +1,0 @@
-{ mutate }:
-mutate ./config.yaml {
-}
-

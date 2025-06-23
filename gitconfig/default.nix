@@ -1,4 +1,7 @@
 { mutate }:
-mutate ./gitconfig {
-  gitignore = ./gitignore;
+{
+  default = mutate ./gitconfig {
+    gitignore = ./gitignore;
+  };
+  tweag = mutate ./gitconfig-tweag {};
 }

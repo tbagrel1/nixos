@@ -1,12 +1,15 @@
 [user]
 	email = tomsb07@gmail.com
 	name = Thomas BAGREL
-[core]
-	excludesfile = @gitignore@
+
+[includeIf "gitdir:~/tweag/"]
+	path = .gitconfig-tweag
 
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 
+[core]
+	excludesfile = @gitignore@

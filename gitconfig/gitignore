@@ -1,3 +1,6 @@
-**/.idea
-**/.vscode
-**/.directory
+.direnv
+.envrc
+hie.yaml
+.vscode
+.directory
+.idea
