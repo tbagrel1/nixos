@@ -89,6 +89,7 @@
   };
   programs.gnupg.agent.enable = true;
   programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 
   users.users.nixos.symlinks = {
     ".gitconfig" = pkgs.gitconfig.default;
@@ -125,7 +126,6 @@
       ctags
       curl
       diffutils
-      direnv
       gcc
       gdb
       git
