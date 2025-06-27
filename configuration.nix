@@ -120,12 +120,15 @@
       automake
       bash
       binutils
+      blesh
       bzip2
       clang
+      cmake
       coreutils
       ctags
       curl
       diffutils
+      fzf
       gcc
       gdb
       git
@@ -159,6 +162,7 @@
       sudo
       universal-ctags
       unzip
+      vim-full
       wget
       which
       zip
