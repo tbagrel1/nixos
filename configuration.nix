@@ -114,6 +114,8 @@
       python-with-my-packages = python3.withPackages my-python-packages;
     in
     [
+      haskellPackages.fourmolu
+
       python-with-my-packages
       # Sorted regular packages under this line
       autoconf
