@@ -13,3 +13,6 @@
 
 [core]
 	excludesfile = @gitignore@
+
+[pull]
+  rebase = true
