@@ -130,6 +130,7 @@
       ctags
       curl
       diffutils
+      evince
       fzf
       gcc
       gdb
