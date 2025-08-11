@@ -163,6 +163,7 @@
       rustup
       starship
       sudo
+      tikzit
       universal-ctags
       unzip
       vim-full
