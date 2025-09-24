@@ -149,6 +149,7 @@
       hunspell
       hunspellDicts.en-us-large
       hunspellDicts.fr-moderne
+      inotify-tools
       jdk
       less
       man
